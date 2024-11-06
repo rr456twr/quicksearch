@@ -1,0 +1,119 @@
+<div class="quickSearch">
+    <h4 class="title">快速查詢 - Quick Search</h4>
+
+    <!-- 標籤導航 -->
+    <div class="titles">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item titleBtn active" role="presentation" data-type="searchType1">
+                <button type="button" id="searchType1-tab" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#searchType1" aria-controls="searchType1" aria-selected="true">館藏目錄</button>
+            </li>
+            <li class="nav-item titleBtn active" role="presentation" data-type="searchType2">
+                <button type="button" id="searchType2-tab" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#searchType2" aria-controls="searchType2" aria-selected="false">資料庫</button>
+            </li>
+            <li class="nav-item titleBtn active" role="presentation" data-type="searchType6">
+                <button type="button" id="searchType6-tab" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#searchType6" aria-controls="searchType6" aria-selected="false">文獻搜尋</button>
+            </li>
+            <li class="nav-item titleBtn active" role="presentation" data-type="searchType3">
+                <button type="button" id="searchType3-tab" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#searchType3" aria-controls="searchType3" aria-selected="false">電子期刊</button>
+            </li>
+            <li class="nav-item titleBtn active" role="presentation" data-type="searchType4">
+                <button type="button" id="searchType4-tab" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#searchType4" aria-controls="searchType4" aria-selected="false">電子書</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tab 內容區域 -->
+    <div class="tab-content p-2">
+        
+        <!-- 館藏目錄 -->
+        <div id="searchType1" class="searchContent tab-pane fade show active" role="tabpanel" aria-labelledby="searchType1-tab">
+            <div>
+                <div class="input-group mb-3">
+                    <button type="button" id="dropdownMenuButton" class="btn btn-default dropdown-toggle list-item" data-toggle="dropdown">書刊名 </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" data-type="TI">書刊名</a></li>
+                        <li><a href="#" data-type="TI" data-mt="SE">期刊名</a></li>
+                        <li><a href="#" data-type="TI" data-mt="AV">視聽資料</a></li>
+                        <li><a href="#" data-type="AU">作者</a></li>
+                        <li><a href="#" data-type="PU">出版者</a></li>
+                        <li><a href="#" data-type="WRD">關鍵字</a></li>
+                    </ul>
+                    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+                    <button type="button" class="btn btn-default submit">搜尋</button>
+                </div>
+            </div>
+            <a href="https://lib.yzu.edu.tw/ajaxYZlib/Search/SearchNew.aspx" target="_blank" rel="noopener" class="linkBtn">進入館藏目錄</a>
+        </div>
+
+        <!-- 資料庫 -->
+        <div id="searchType2" class="searchContent tab-pane fade" role="tabpanel" aria-labelledby="searchType2-tab">
+            <div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="請輸入資料庫名稱" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default submit">搜尋</button>
+                    </span>
+                </div>
+            </div>
+            <a href="https://lib.yzu.edu.tw/ERWeb2/BrowseEDB.aspx" target="_blank" rel="noopener" class="linkBtn" style="display: inline;">資料庫清單</a>
+        </div>
+
+        <!-- 電子期刊 -->
+        <div id="searchType3" class="searchContent tab-pane fade" role="tabpanel" aria-labelledby="searchType3-tab">
+            <form method="get" target="_blank" class="form">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" id="pullmenubutton" class="btn btn-default dropdown-toggle list-item" data-toggle="dropdown">刊名開頭為 </button>
+                        <ul id="dropdownMenuButton&amp;" class="dropdown-menu s_type" data-type="T_B">
+                            <li><a href="#" data-type="T_B">刊名開頭為 </a></li>
+                            <li><a href="#" data-type="T_M">刊名等於 </a></li>
+                            <li><a href="#" data-type="T_W_A">刊名包含所有文字 </a></li>
+                            <li><a href="#" data-type="I_M">ISSN等於 </a></li>
+                        </ul>
+                        <input name="searchType" type="hidden" value="T_B" id="searchType" />
+                    </div>
+                    <input name="bquery" type="text" id="search" class="form-control" placeholder="請輸入欲查找的刊名或ISSN" />
+                    <input name="paramdict" type="hidden" value="zh-TW" />
+                    <input name="tab" type="hidden" value="JOURNALS" />
+                    <div class="input-group-btn">
+                        <input type="submit" value=" 搜尋 " class="btn btn-default submit form-control" />
+                    </div>
+                </div>
+            </form>
+            <a href="../library/getIP4Link.php?dst=https://re8ux2yp4z.search.serialssolutions.com?paramdict=zh-TW&amp;tab=JOURNALS" target="_blank" rel="noopener" class="linkBtn">進入電子期刊</a>
+        </div>
+
+        <!-- 電子書 -->
+        <div id="searchType4" class="searchContent tab-pane fade" role="tabpanel" aria-labelledby="searchType4-tab">
+            <form method="get" target="_blank" class="form">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" id="downmenu" class="btn btn-default dropdown-toggle list-item" data-toggle="dropdown">書名開頭為 </button>
+                        <ul id="dropdownMenuButton" class="dropdown-menu s_type" data-type="T_B">
+                            <li><a href="#" data-type="T_B">書名開頭為 </a></li>
+                            <li><a href="#" data-type="T_M">書名等於 </a></li>
+                            <li><a href="#" data-type="T_W_A">書名包含所有文字 </a></li>
+                            <li><a href="#" data-type="I_M">ISBN等於 </a></li>
+                        </ul>
+                    </div>
+                    <input name="bquery" type="text" id="search" class="form-control" placeholder="請輸入欲查找的書名或ISBN" />
+                    <input name="paramdict" type="hidden" value="zh-TW" />
+                    <input name="tab" type="hidden" value="BOOKS" />
+                    <div class="input-group-btn">
+                        <input type="submit" value=" 搜尋 " class="btn btn-default submit form-control" />
+                    </div>
+                </div>
+            </form>
+            <a href="../library/getIP4Link.php?dst=https://re8ux2yp4z.search.serialssolutions.com?paramdict=zh-TW&amp;tab=BOOKS" target="_blank" rel="noopener" class="linkBtn">進入電子書</a>
+        </div>
+
+        <!-- 文獻搜尋 -->
+        <div id="searchType6" class="searchContent tab-pane fade" role="tabpanel" aria-labelledby="searchType6-tab">
+            <input name="type6" type="radio" value="museSearch" /> 資源探索 
+            <input name="type6" type="radio" value="gSearch" /> Google 學術搜尋 <br />
+            <div id="museSearch">
+                <form method="get">
+                    <input type="hidden" value="za-CN" />
+                    <div class="input-group w-100">
+                        <input name="uquery" type="text" class="form-control" placeholder="請輸入篇名、作者或關鍵字" />
+                        <div
